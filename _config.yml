@@ -5,3 +5,8 @@ url: "https://NavinNr.github.io"
 
 # This is where the magic happens for your slugs
 permalink: /:categories/:title/
+
+plugins:
+  - jekyll-paginate
+paginate: 12
+paginate_path: "/blog/page:num/"

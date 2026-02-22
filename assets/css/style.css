@@ -1,32 +1,85 @@
+/* Adapted from TenAsia | Global Opportunity Tracker */
 :root {
-  --primary: #2c3e50;
-  --accent: #27ae60; /* Growth green */
-  --bg: #fdfdfd;
-  --text: #333;
+    --bg-color: #ffffff;
+    --header-bg: #fafafa;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --accent: #000000;
 }
 
-body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; margin: 0; background: var(--bg); color: var(--text); }
-
-/* Header Navigation */
-header { background: var(--primary); color: white; padding: 1rem 0; }
-.nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
-nav a:hover { color: var(--accent); }
-
-/* Main Grid Layout */
-.wrapper { 
-  display: grid; 
-  grid-template-columns: 3fr 1fr; 
-  gap: 40px; 
-  max-width: 1000px; 
-  margin: 40px auto; 
-  padding: 0 20px; 
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Sidebar Styling */
-aside h3 { border-bottom: 2px solid var(--primary); padding-bottom: 5px; font-size: 1.1rem; }
+/* Header & Nav */
+.top-nav { border-bottom: 1px solid var(--border-color); padding: 1rem 0; background: #fff; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.05em; color: var(--accent); text-decoration: none; }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+
+/* The Grid System */
+.wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card Styling from Tenders CSS */
+.post-card {
+    border: 1px solid var(--border-color);
+    padding: 0; /* Changed to allow image to hit edges */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+}
+
+.post-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.post-image {
+    width: 100%;
+    height: 180px;
+    background: #f0f0f0; /* Default color if no image */
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.post-excerpt {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Sidebar styling */
+aside h3 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
 aside ul { list-style: none; padding: 0; }
-aside li { margin-bottom: 10px; font-size: 0.9rem; }
-aside a { text-decoration: none; color: var(--primary); }
-
-@media (max-width: 768px) { .wrapper { grid-template-columns: 1fr; } }
+aside li { margin-bottom: 0.5rem; font-size: 0.9rem; }

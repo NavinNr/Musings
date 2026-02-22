@@ -1,9 +1,8 @@
 ---
 layout: default
-title: "The First Message"
+title: "Hello World"
 categories: growth
+thumbnail: "/assets/images/my-chart.jpg"  # Add this!
 ---
 
-# Day One
-This is where the journey starts. Because I set my category to **growth**, 
-my URL slug will be `/growth/my-first-message/`.
+Hello World! This is the start of the journey...
