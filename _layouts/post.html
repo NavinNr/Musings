@@ -1,24 +1,24 @@
 ---
 layout: default
 ---
-<article style="max-width: 700px;">
-    <header style="margin-bottom: 3rem;">
-        <span class="category-tag">{{ page.categories | first }}</span>
-        <h1 style="font-size: 2.5rem; letter-spacing: -0.03em; margin: 0.5rem 0;">{{ page.title }}</h1>
+<article class="post-entry">
+    <header class="post-header">
+        <div class="category-tag">{{ page.categories | first }}</div>
+        <h1>{{ page.title }}</h1>
         
-        <div style="font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 15px;">
-            <span><strong>Filed:</strong> {{ page.date | date: "%b %d, %Y" }}</span>
+        <div class="post-meta">
+            <span><strong>Filed:</strong> {{ page.date | date: "%B %d, %Y" }}</span>
             {% if page.last_modified_at %}
-            <span style="color: #059669;"><strong>Updated:</strong> {{ page.last_modified_at | date: "%b %d, %Y" }}</span>
+            <span class="edited-date"><strong>Last Revision:</strong> {{ page.last_modified_at | date: "%B %d, %Y" }}</span>
             {% endif %}
         </div>
     </header>
 
-    <div class="post-content" style="font-size: 1.1rem; line-height: 1.7;">
+    <div class="post-content">
         {{ content }}
     </div>
 
-    <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted);">
-        <p>This is a living document. Last investigated on {{ page.last_modified_at | default: page.date | date: "%B %Y" }}.</p>
+    <footer class="post-footer">
+        <p><em>Note: This investigation is subject to updates as new data is acquired.</em></p>
     </footer>
 </article>

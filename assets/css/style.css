@@ -48,3 +48,16 @@ aside a { text-decoration: none; color: inherit; }
 aside a:hover { text-decoration: underline; }
 
 @media (max-width: 850px) { .wrapper { grid-template-columns: 1fr; } }
+
+/* Individual Post Styles */
+.post-entry { max-width: 720px; margin: 0 auto; }
+.post-header { margin-bottom: 2.5rem; }
+.post-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin: 0.5rem 0; color: var(--accent); }
+
+.post-meta { display: flex; gap: 20px; font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; }
+.edited-date { color: #059669; font-weight: 600; } /* Subtle green to highlight it was updated */
+
+.post-content { line-height: 1.8; font-size: 1.1rem; }
+.post-content h2 { font-size: 1.5rem; margin-top: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+
+.post-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted); }
