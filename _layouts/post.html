@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="post-entry">
     <header class="post-header">
-        <div class="category-tag">{{ page.categories | first }}</div>
+        <span class="category-badge">{{ page.categories | first }}</span>
         <h1>{{ page.title }}</h1>
         
         <div class="post-meta">
@@ -13,9 +13,10 @@ layout: default
             {% endif %}
         </div>
     </header>
+
     {% if page.thumbnail %}
     <div class="post-featured-image" style="margin-bottom: 2rem;">
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px;">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 6px; border: 1px solid var(--border-color);">
     </div>
     {% endif %}
 
@@ -24,6 +25,6 @@ layout: default
     </div>
 
     <footer class="post-footer">
-        <p><em>tdy-i-learned</em></p>
+        <p><em>Note: This investigation is a living document and is subject to updates as new data is acquired.</em></p>
     </footer>
 </article>

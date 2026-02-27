@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Index
 ---
 
 <div class="post-grid">
@@ -14,9 +14,14 @@ title: Home
       </div>
       
       <div class="post-content">
-        <span class="status-tag">{{ post.categories | first }}</span>
+        <span class="category-badge">{{ post.categories | first }}</span>
+        
         <h3>{{ post.title }}</h3>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</p>
+        
+        <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 110 }}
+        </p>
+        
         <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">
             {{ post.date | date: "%b %d, %Y" }}
         </div>
@@ -26,7 +31,7 @@ title: Home
 </div>
 
 {% if paginator.total_pages > 1 %}
-<div style="margin-top: 4rem; display: flex; gap: 10px;">
+<div style="margin-top: 4rem; display: flex; gap: 20px;">
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | relative_url }}" class="logo" style="font-size: 0.8rem;">&larr; Newer</a>
   {% endif %}
