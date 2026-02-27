@@ -13,12 +13,17 @@ layout: default
             {% endif %}
         </div>
     </header>
+    {% if page.thumbnail %}
+    <div class="post-featured-image" style="margin-bottom: 2rem;">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px;">
+    </div>
+    {% endif %}
 
     <div class="post-content">
         {{ content }}
     </div>
 
     <footer class="post-footer">
-        <p><em>Note: This investigation is subject to updates as new data is acquired.</em></p>
+        <p><em>tdy-i-learned</em></p>
     </footer>
 </article>
