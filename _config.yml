@@ -1,7 +1,7 @@
 title: Musings
 description: Things I've observed in Finance
-baseurl: "/Musings" # Critical for GitHub project pages
-url: "https://NavinNr.github.io"
+baseurl: "" # Critical for GitHub project pages
+url: "https://tdy-i-learned.com"
 
 # This is where the magic happens for your slugs
 permalink: /:categories/:title/
