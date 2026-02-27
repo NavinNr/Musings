@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | Learned</title>
+    <title>{{ page.title }} | Notes</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
@@ -11,24 +11,15 @@
 
 <header class="top-nav">
     <div class="nav-container">
-        <a href="{{ '/' | relative_url }}" class="logo">LEARNED</a>
+        <a href="{{ '/' | relative_url }}" class="logo">NOTES</a>
         <nav>
             <ul class="nav-links">
-                <li><a href="{{ '/' | relative_url }}">Blog</a></li>
+                <li><a href="{{ '/' | relative_url }}">Index</a></li>
                 <li><a href="{{ '/about' | relative_url }}">About</a></li>
             </ul>
         </nav>
     </div>
 </header>
-
-{% if page.url == "/" %}
-<section class="main-header">
-    <div class="container">
-        <h1>Learned.</h1>
-        <p>Documenting the journey from $100 to a million over five years.</p>
-    </div>
-</section>
-{% endif %}
 
 <div class="wrapper">
     <main>
@@ -37,7 +28,7 @@
 
     <aside>
         <div class="sidebar-section">
-            <h3>Categories</h3>
+            <h3>Investigation Areas</h3>
             <ul>
                 {% for category in site.categories %}
                   <li><a href="{{ '/category/' | append: category[0] | relative_url }}">{{ category[0] | capitalize }}</a></li>
@@ -46,11 +37,11 @@
         </div>
 
         <div class="sidebar-section">
-            <h3>Archive</h3>
+            <h3>Timeline</h3>
             <ul>
                 {% assign postsByDate = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}
                 {% for month in postsByDate %}
-                  <li><a href="#">{{ month.name }} ({{ month.items.size }})</a></li>
+                  <li>{{ month.name }} ({{ month.items.size }})</li>
                 {% endfor %}
             </ul>
         </div>
