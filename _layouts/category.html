@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<h1>Archive: {{ page.title | capitalize }}</h1>
+
+<div class="post-grid">
+  {% for post in site.categories[page.category] %}
+    <a href="{{ post.url | relative_url }}" class="post-card">
+      <div class="post-image-container" style="background-color: {{ post.color | default: '#f3f4f6' }};">
+        {% if post.thumbnail %}<img src="{{ post.thumbnail | relative_url }}">{% endif %}
+      </div>
+      <div class="post-content">
+        <span class="category-badge">{{ post.categories | first }}</span>
+        <h3>{{ post.title }}</h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</p>
+      </div>
+    </a>
+  {% endfor %}
+</div>

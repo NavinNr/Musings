@@ -75,3 +75,19 @@ aside a:hover { text-decoration: underline; }
     margin-bottom: 0.5rem;
     text-decoration: none;
 }
+
+aside a {
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+aside a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.sidebar-section li {
+    margin-bottom: 0.8rem;
+    list-style: none;
+}

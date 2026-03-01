@@ -6,6 +6,7 @@
     <title>{{ page.title }} | Notes</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}">
 </head>
 <body>
 
@@ -28,10 +29,12 @@
 
     <aside>
         <div class="sidebar-section">
-            <h3>Investigation Areas</h3>
+            <h3>Timeline</h3>
             <ul>
-                {% for category in site.categories %}
-                  <li><a href="{{ '/category/' | append: category[0] | relative_url }}">{{ category[0] | capitalize }}</a></li>
+                {% assign postsByDate = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}
+                {% for month in postsByDate %}
+                    {% assign month_slug = month.name | slugify %}
+                    <li><a href="{{ '/archive/' | append: month_slug | relative_url }}">{{ month.name }} ({{ month.items.size }})</a></li>
                 {% endfor %}
             </ul>
         </div>
