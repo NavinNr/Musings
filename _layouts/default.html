@@ -29,12 +29,10 @@
 
     <aside>
         <div class="sidebar-section">
-            <h3>Timeline</h3>
+            <h3>Investigation Areas</h3>
             <ul>
-                {% assign postsByDate = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}
-                {% for month in postsByDate %}
-                    {% assign month_slug = month.name | slugify %}
-                    <li><a href="{{ '/archive/' | append: month_slug | relative_url }}">{{ month.name }} ({{ month.items.size }})</a></li>
+                {% for category in site.categories %}
+                  <li><a href="{{ '/category/' | append: category[0] | relative_url }}">{{ category[0] | capitalize }}</a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -44,7 +42,8 @@
             <ul>
                 {% assign postsByDate = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}
                 {% for month in postsByDate %}
-                  <li>{{ month.name }} ({{ month.items.size }})</li>
+                    {% assign month_slug = month.name | slugify %}
+                    <li><a href="{{ '/archive/' | append: month_slug | relative_url }}">{{ month.name }} ({{ month.items.size }})</a></li>
                 {% endfor %}
             </ul>
         </div>
