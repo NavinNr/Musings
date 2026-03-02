@@ -8,5 +8,16 @@ permalink: /:categories/:title/
 
 plugins:
   - jekyll-paginate
+  - jekyll-archives
+
 paginate: 12
 paginate_path: "/blog/page:num/"
+
+jekyll-archives:
+  enabled: 
+    - categories
+    - month
+  layout: archive-layout
+  permalinks:
+    category: '/category/:name/'
+    month: '/archive/:year-:month/'
